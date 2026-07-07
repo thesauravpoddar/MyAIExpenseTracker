@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${POSTGRES_DB}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database: postgresql
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+jwt:
+  secret-key: ${JWT_KEY:8++ThdrQ62Yvt7qzsuU+GnJnalFL24Px6Oe6cVqJ0jc=}
+  expiration-time-access-token: 6000
+
+debug: false
